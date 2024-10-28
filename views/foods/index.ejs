@@ -11,12 +11,21 @@
 
     <ul>
       <% foods.forEach((food)=>{ %>
+      <% if (food._id) !== null { %>
       <a href="/users/<%= user._id %>/foods/<%= food._id %>">
         <li><%= food.food %></li>
         <li><%= food.calories %></li>
         <li><%= food.expired %></li>
+        <form action="/users/<%= user._id %>/foods" method="DELETE">
+          <button type="submit">Delete Food</button>
+        </form>
       </a>
-    <% }) %>
+      <% { else %>
+        <li>There are no foods in your Pantry</li>
+      <% } %>
+    <% }}) %>
     </ul>
+
+
   </body>
 </html>
