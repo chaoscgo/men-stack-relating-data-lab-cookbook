@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const foodSchema = new mongoose.Schema({
   food: {type: String, required: true},
   calories: {type: Number, required: true},
-  expired: {type: Boolean, required: true}
 });
 
 const userSchema = mongoose.Schema({
@@ -15,7 +14,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  pantry: [foodSchema],
+  foods: [foodSchema],
 });
 
 const User = mongoose.model('User', userSchema);
