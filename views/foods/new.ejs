@@ -9,7 +9,7 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a new Food to the Pantry</h1>
 
-    <form action="/users/<%= user._id %>/foods" method = "POST">
+    <form action="/users/<%= user._id %>/foods/" method = "POST">
         <label for="food">Food:</label>
         <input type="text" name="food" id="food">
 
